@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8pqvw52xocub"]
+
+[ext_resource type="Texture2D" uid="uid://cax4fi4f23y2j" path="res://star.jpg" id="1_0hfcx"]
+[ext_resource type="FontFile" uid="uid://day2swlgipftm" path="res://Minecraft.ttf" id="1_u3h2t"]
+[ext_resource type="Texture2D" uid="uid://blwcmrg4hinp8" path="res://x.png" id="2_xqiq3"]
+[ext_resource type="Script" path="res://Continuar.gd" id="4_glac2"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(589, 311)
+texture = ExtResource("1_0hfcx")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1034.0
+offset_right = 1153.0
+offset_bottom = 99.0
+icon = ExtResource("2_xqiq3")
+icon_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.0
+offset_top = -275.5
+offset_right = 286.0
+offset_bottom = 275.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u3h2t")
+theme_override_font_sizes/font_size = 32
+text = "The King
+
+Estudiante:
+Ximena García Vega
+ximena.garcia7482@alumnos.udg.mx
+
+Materia:
+Simulación para Computadora
+
+Profesor:
+José Luis David Bonilla Carranza
+
+Fecha:
+12 de noviembre, 2023"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continuar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u3h2t")
+theme_override_font_sizes/font_size = 30
+text = "Continuar"
+script = ExtResource("4_glac2")
+
+[connection signal="pressed" from="VBoxContainer/Continuar" to="VBoxContainer/Continuar" method="_on_pressed"]
